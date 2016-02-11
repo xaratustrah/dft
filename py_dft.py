@@ -1,13 +1,18 @@
 #!/usr/bin/env python
+#
+# double precision dft subroutine
+# xaratustrah
+# 2016
+#
 
 import cmath
-import numpy as np
+
 
 def dft(x):
     xre = [s.real for s in x]
     xim = [s.imag for s in x]
     n = len(xre)
-    y = [complex(0,0)] * n
+    y = [complex(0, 0)] * n
     for k in range(n):  # For each output element
         sumreal = 0.0
         sumimag = 0.0
@@ -26,9 +31,6 @@ def main():
     y = dft(x)
     print(x)
     print(y)
-    y = np.fft.fft(x)
-    print(y)
-
 
 
 if __name__ == '__main__':

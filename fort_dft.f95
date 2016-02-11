@@ -1,16 +1,8 @@
-! double precision dft
-
-program test_dft
-  implicit none
-  integer, parameter :: dp = kind(1.0d0)
-  complex(dp), dimension (4) :: x, y
-
-  x = [(1,2), (2,3) ,(3,4), (4, 5)]
-  call dft(size(x), x, y)
-  print *, x
-  print *, y
-end program test_dft
-
+!
+! double precision dft subroutine
+! xaratustrah
+! 2016
+!
 
 subroutine dft(n, x, y)
   implicit none
@@ -38,6 +30,20 @@ subroutine dft(n, x, y)
      yim(k) = sumimag
   enddo
 
-  y = cmplx(yre, yim)
+  y = dcmplx(yre, yim)
 end subroutine dft
+
+! -------------------------------------
+
+program test_dft
+  implicit none
+  integer, parameter :: dp = kind(1.0d0)
+  complex(dp), dimension (4) :: x, y
+
+  x = [(1,2), (2,3) ,(3,4), (4, 5)]
+  call dft(size(x), x, y)
+  print *, x
+  print *, y
+end program test_dft
+
 

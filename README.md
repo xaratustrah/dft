@@ -1,9 +1,12 @@
 # dft
-testing dft algorithm with fortran and python to check the speed and usage of f2py.
+testing dft algorithm with fortran and python to check the speed and usage of f2py. Python code inspired by [this page](https://github.com/xaratustrah/dft). Fortran code written accordingly.
 
-Python code inspired by [this page](https://github.com/xaratustrah/dft). Fortran code written accordingly.
+Before binding into python, first try to check the codes separately by themselves:
 
-Compile with
+    gfortran fort_dft.f95 && ./a.out
+    ./py_dft.py
+    
+After seeing the same results, proceed to the next section: Compile with
 
     f2py -c --fcompiler=gnu95 -m fort_dft fort_dft.f95
     
